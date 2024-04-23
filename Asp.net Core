@@ -1,12 +1,96 @@
-- 👋 Hi, I’m @Vijaya1456
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+What is asp.net Core?
+------------------------------
+asp.net core is cross-platform, high performance and open-source web applicaion framework which microsoft released the first version of asp.net core in 2016
 
-<!---
-Vijaya1456/Vijaya1456 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+it enables developers to create modern, cloud enabled applications such as web application, mobile application and IOT Application
+
+asp.net core is not an upgraded version of asp.net, asp.net core is completely rewriting that work with .net core framework.
+
+cross-platfrom: it's  not only toed to a windows operating systems like legacy asp.net framewoek. you cam develop and run producation ready asp.net corre apps on linux and mac as well
+
+Features of asp.net core
+---------------------------
+Built-in supports for dependency injection
+built-in supports for the logging framework it can be extensibke
+introduced new , fasr and cross-palatform web server -Kesterl.so , a web application can run without iis , apache, and Nginx.
+Multiple hostings way are supported.
+command-line supports to create , build and run the application.
+there is no web.config file. we can store the custom configuration into an appsettings.json file.
+it has good support for asunchronous programming.
+there is no global.asax file. we can register the services in program. cs file
+support web socket and signlaR.
+
+
+Advantages of asp.net core over asp.net
+---------------------------------------------
+
+it -is cross platform.
+there is  no dependency on framework installation because all the dependencied are come with .net core framework.
+asp.net core can handle more request than asp.net
+multiple deployment options available with asp.net core.
+well-suited to develop for cloud based applciations
+
+can sp.net core application work with full .net 4.x framework
+-----------------------------------------------------------------
+yes. it is
+asp.net core appliaction works with full .net framweork via the .net standard library
+
+Metapackages
+------------------------------------------------------
+framework .mct core 2.0 introduced metapackages that includes all the suppoted package by asp.net code with their dependencies into one package.
+It helps us to do fast development as we don't require to include the individual asp.net core packages.
+the assembly Microsoft. aspnetcore .all is metapacke provide by asp.net core
+
+routing in asp.net core
+-----------------------------------
+Routing functionality tha map incoming request to the route hnadler
+routing features is same as in mvc and & web api framework \
+
+Conventional based routing
+attribute based routing
+
+Program.cs 
+
+startup classs is the entry point of the asp.net application
+every .net core application must have this class . this class contains the application configuration rated items.
+
+role of startup class
+-------------------------------------------------------------------
+it configures the services which are required by the app.
+it defines the app's request handling pipeline as series of middleware components.
+
+ConfigureServices method
+---------------------------
+this is an optional method of startup class.
+it cna be used to configure the services that are used by the applciation.
+usin this method, we can add services to the depedncy ijection container, so services are availavle throught the dependency in controller constructor.
+
+configure method
+-----------------------------
+too add middleware components to the Iapplicationbuilder instance that's avialable in Configure Method.
+It also defines how the application will repsond to each http request.
+using this method , we can configure built-in middleware such as routing , authenticationn, session , etc as well as third-party middleware.
+
+
+Middleware 
+---------------------------------------
+middleware is program that is assembled into an app pipeline to handle requests and responses.
+where each component:
+chooses whehtre to pass the  request to the next component in the pipeline.
+can perform work before and after the next component in the pipeline.
+
+you can add middleware component to the pipeline by calling .use extension method as below.
+app.UseHttpsRedirection();
+app.UseStaticFiiles();
+app.UseRouting();
+
+Request delegates.
+------------------------------------------------------
+Request delegates are mechanism by which each http request can be delegate or can be bulkt into request pipeline.
+
+Request pipelines are used to build the request pipeline to handle each http request.
+
+request delegates are configured using Run, Map, and use extension methods.
+
+app.Run(),
+app.Map()
